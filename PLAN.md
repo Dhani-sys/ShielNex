@@ -11,6 +11,18 @@
 | Auth0 | Tenant `shieldnex` (Development, region EU-2) |
 | Hostinger | Domain `sanatanup.in` (active, expires 2027-02-05). No hosting/email plan confirmed yet. |
 
+## Environments
+| | Domain | Purpose |
+|---|---|---|
+| Testing (now) | `shieldnex.sanatanup.in` (Hostinger domain `sanatanup.in`) | Build and test everything |
+| Launch (later) | `shieldnex.in` | Final ShieldNex website. Email is already on Zoho (`@shieldnex.in`) |
+
+**Moving to `shieldnex.in` at launch** (settings only, no code changes):
+1. Auth0 → ShieldNex Web → add `https://shieldnex.in` to Allowed Callback / Logout / Web Origins.
+2. Hosting env: `APP_URL=https://shieldnex.in`.
+3. Point `shieldnex.in` DNS to the hosting.
+4. Use real Turnstile keys for `shieldnex.in`; switch the Auth0 tenant environment to Production.
+
 ## Setup progress
 | Item | Value / Status |
 |---|---|
