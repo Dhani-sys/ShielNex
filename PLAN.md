@@ -11,6 +11,14 @@
 | Auth0 | Tenant `shieldnex` (Development, region EU-2) |
 | Hostinger | Domain `sanatanup.in` (active, expires 2027-02-05). No hosting/email plan confirmed yet. |
 
+## Setup progress
+| Item | Value / Status |
+|---|---|
+| Auth0 Domain | `shieldnex.eu.auth0.com` |
+| Auth0 SPA app `ShieldNex Web` – Client ID (public) | `RXNj9ZdARAl2GeXkByG0qzUDB4ZClaCq` |
+| Auth0 M2M app `ShieldNex API` | ⏳ pending (secret is never committed) |
+| Database connection / Attack Protection | ⏳ pending |
+
 ## Architecture
 ```
 User → shieldnex.sanatanup.in (frontend)
