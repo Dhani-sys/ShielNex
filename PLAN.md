@@ -16,8 +16,15 @@
 |---|---|
 | Auth0 Domain | `shieldnex.eu.auth0.com` |
 | Auth0 SPA app `ShieldNex Web` – Client ID (public) | `RXNj9ZdARAl2GeXkByG0qzUDB4ZClaCq` |
-| Auth0 M2M app `ShieldNex API` | ⏳ pending (secret is never committed) |
-| Database connection / Attack Protection | ⏳ pending |
+| Auth0 M2M app `ShieldNex API` | ✅ created, `read:users` + `update:users` (secret is never committed) |
+| Database connection | ✅ email + phone (required, no SMS verification), sign-ups on, passwordless off |
+| Social login | ❌ off (would break 1 email = 1 account) |
+| Attack Protection | Brute-force on. Bot Detection is an Auth0 add-on → forgot password uses Cloudflare Turnstile |
+| Code (frontend + OTP API) | ✅ written and tested locally (see README) |
+| Email provider (SMTP) | ⏳ pending (Zoho / Hostinger / Brevo) |
+| MongoDB Atlas | ⏳ pending |
+| Cloudflare Turnstile keys | ⏳ pending (test keys in use) |
+| Hosting + DNS (`shieldnex.sanatanup.in`) | ⏳ pending |
 
 ## Architecture
 ```

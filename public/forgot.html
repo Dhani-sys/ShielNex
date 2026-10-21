@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShieldNex – Forgot password</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="card">
+    <div class="brand">
+      <div class="brand-logo">S</div>
+      <span class="brand-name">ShieldNex</span>
+    </div>
+
+    <!-- Step 1: email or phone -->
+    <form id="step-identify">
+      <h1>Forgot password</h1>
+      <p class="sub">Enter the email or phone number linked to your account. We'll email you a 6-digit code.</p>
+      <label for="identifier">Email or phone number</label>
+      <input id="identifier" name="identifier" autocomplete="username" required
+             placeholder="you@example.com or 9876543210" />
+      <div id="captcha" class="captcha"></div>
+      <button id="btn-send" class="btn" type="submit">Send code</button>
+    </form>
+
+    <!-- Step 2: OTP -->
+    <form id="step-otp" class="hidden">
+      <h1>Enter your code</h1>
+      <p class="sub" id="otp-info"></p>
+      <label for="otp">6-digit code</label>
+      <input id="otp" class="otp" inputmode="numeric" maxlength="6" autocomplete="one-time-code" required />
+      <div class="row">
+        <span>Expires in <b id="otp-timer">3:00</b></span>
+        <button id="btn-resend" class="link" type="button" disabled>Resend code</button>
+      </div>
+      <button id="btn-verify" class="btn" type="submit">Verify code</button>
+    </form>
+
+    <!-- Step 3: new password -->
+    <form id="step-reset" class="hidden">
+      <h1>Set a new password</h1>
+      <p class="sub">Use at least 8 characters with upper and lower case letters and numbers.</p>
+      <label for="new-password">New password</label>
+      <input id="new-password" type="password" autocomplete="new-password" minlength="8" required />
+      <label for="confirm-password">Confirm new password</label>
+      <input id="confirm-password" type="password" autocomplete="new-password" minlength="8" required />
+      <button id="btn-reset" class="btn" type="submit">Change password</button>
+    </form>
+
+    <!-- Done -->
+    <section id="step-done" class="hidden">
+      <h1>Password changed ✅</h1>
+      <p class="sub">You can now log in with your new password.</p>
+      <a class="btn" href="/?login=1">Log in</a>
+    </section>
+
+    <div id="msg" class="msg"></div>
+    <div class="center"><a class="link" href="/">Back to login</a></div>
+  </main>
+
+  <script src="/config.js"></script>
+  <script src="/js/forgot.js"></script>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit&onload=onTurnstileLoad"></script>
+</body>
+</html>
